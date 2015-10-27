@@ -1,0 +1,11 @@
+[user]
+	name = Michael Arnold
+	email = github@razorsedge.org
+[alias]
+	slog = log --decorate --color --oneline --graph
+[core]
+	pager = cat
+[color]
+	ui = on
+[http]
+#	proxy = http://proxy.razorsedge.org:3128/

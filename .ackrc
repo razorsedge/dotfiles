@@ -1,0 +1,9 @@
+# Add support for puppet
+#--type-set TYPE=.EXTENSION[,.EXT2[,...]]
+--type-set=puppet=.pp
+
+# No color
+#--nocolor
+--color-filename=blue
+--color-match=black on_yellow
+--color-lineno=red
