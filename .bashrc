@@ -11,8 +11,8 @@ PS1="[\u@\h \W]\\$ "
 
 export VISUAL=vim
 
-alias ssh='/usr/bin/ssh'
-alias scp='/usr/bin/scp -p'
+#alias ssh='/usr/bin/ssh'
+#alias scp='/usr/bin/scp -p'
 #alias ls='ls -F'
 #unalias vi
 #alias xterm="xterm -j -rw -aw -sb -si -sk -sl 5000 -bg white -fg black"
@@ -20,6 +20,12 @@ alias scp='/usr/bin/scp -p'
 if [ `uname -m` = sun4u ]; then alias ls='gls --color=tty -F'; fi
 
 export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin:/opt/puppetlabs/bin:~/bin
+
+# For OS X.
+BREW_PREFIX=$(brew --prefix 2>/dev/null)
+if [ -f ${BREW_PREFIX}/etc/bash_completion -a -z "$BASH_COMPLETION" ]; then
+  . ${BREW_PREFIX}/etc/bash_completion
+fi
 
 # http://blog.fedora-fr.org/bochecha/post/2009/08/A-git-aware-prompt-(part2)
 if [ -f /etc/bash_completion.d/git -a -f ~/bin/git-prompt.sh ]; then
