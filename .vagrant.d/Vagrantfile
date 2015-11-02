@@ -1,0 +1,19 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  # https://github.com/tmatilai/vagrant-proxyconf
+  if defined?(VagrantPlugins::ProxyConf)
+    config.proxy.http = "http://proxy:3128/"
+    config.proxy.https = "http://proxy:3128/"
+    config.proxy.no_proxy = "localhost,127.0.0.1,.razorsedge.org"
+  end
+  # https://github.com/dotless-de/vagrant-vbguest
+  if defined?(VagrantPlugins::VagrantVbguest)
+    config.vbguest.auto_update = false
+  end
+  # http://fgrehm.viewdocs.io/vagrant-cachier/usage/
+  if Vagrant.has_plugin?("vagrant-cachier")
+    config.cache.scope = :box
+  end
+end
